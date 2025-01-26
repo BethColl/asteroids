@@ -18,6 +18,7 @@ def main():
 				return
 		screen.fill((0, 0, 0))
 		player.draw(screen)
+		player.update(dt)
 		pygame.display.flip()
 		frame_limiter.tick(60)
 		dt = (frame_limiter.get_time() / 100)
