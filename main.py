@@ -30,6 +30,11 @@ def main():
 			object.draw(screen)
 		for object in updatable:
 			object.update(dt)
+		for object in asteroids:
+			if object.collision(player) == True:
+				print("Game over!")
+				pygame.QUIT
+				return
 		pygame.display.flip()
 		frame_limiter.tick(60)
 		dt = (frame_limiter.get_time() / 100)
