@@ -37,6 +37,10 @@ def main():
 				print("Game over!")
 				pygame.QUIT
 				return
+			for bullet in shots:
+				if object.collision(bullet) == True:
+					object.kill()
+					bullet.kill()
 		pygame.display.flip()
 		frame_limiter.tick(60)
 		dt = (frame_limiter.get_time() / 100)
