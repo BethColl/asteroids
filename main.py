@@ -39,7 +39,7 @@ def main():
 				return
 			for bullet in shots:
 				if object.collision(bullet) == True:
-					object.kill()
+					object.split()
 					bullet.kill()
 		pygame.display.flip()
 		frame_limiter.tick(60)
